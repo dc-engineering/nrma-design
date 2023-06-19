@@ -1,0 +1,301 @@
+
+    @import url('https://fonts.cdnfonts.com/css/gt-eesti-display-trial?styles=146805,146796');
+
+
+:root
+{
+  --mynrma-mid-blue: #005AFF;
+  --mynrma-text: #0E202A;
+  --mynrma-text-light: #435865;
+  --mynrma-white: #ffffff;
+} 
+
+*
+{
+  margin: 0;
+  transition: 1s ease-in-out;
+}
+
+img
+{
+  max-width: 100%;
+  height: auto;
+}
+
+html
+{
+  font-family: 'GT Eesti Display Trial', sans-serif;
+  font-family: 'GT Eesti Text Trial', sans-serif;
+  box-sizing: border-box;
+  min-height: 200vh;
+}
+
+h1
+{
+  line-height: 1.4;
+  margin-block-end: 0.5ch;
+  font-size: 48px;
+}
+
+h2, h3, h4, h5, h6, p
+{
+  line-height: 1.6;
+  margin-block-end: 1.6ch;
+}
+
+.divider-banner-wrapper
+{
+  position: relative;
+  width: 100%;
+  background: var(--mynrma-mid-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+  border-top: 1px solid #f2f2f2;
+}
+
+.divider-banner-wrapper::after
+{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 32px;
+  background: radial-gradient(#ffffff00 49%, white 50%);
+  background-size: 150% 200%;
+  background-position: 50% 100%;
+}
+
+.banner-hero
+{
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.banner-hero
+{
+  left: 50%;
+  width: 50%;
+  background-image: url('assets/mynrma-hero-ev-a.png');
+  background-size: cover;
+  background-position: center center;
+}
+
+.img-center-right .banner-hero
+{
+  background-position: center right !important;
+}
+
+.banner-hero::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1px;
+  background-image: url('assets/mynrma-line-divider-mask-a-horizontal.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 75%;
+  height: 100%;
+}
+
+.content-wrapper
+{
+  display: flex;
+  justify-content: space-between;
+  width: min(85%, 900px);
+  padding-block: 80px;
+  z-index: 1;
+  color: var(--mynrma-white);
+  font-size: 17px;
+}
+
+.content-wrapper .content-a,
+.content-wrapper .content-b
+{
+  flex-basis: 50%;
+  border: 0px solid red;
+}
+
+button[class*="btn-"]
+{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 16px 24px;
+  min-height: 48px;
+  line-height: 1;
+  border-radius: 999rem;
+  border: none;
+  font-size: 18px;
+  transition: ease 0.3s;
+  outline-offset: 2px;
+  vertical-align: middle;
+}
+
+button[class*="primary"]
+{
+  background: linear-gradient(33deg, #C70000 -100%, #F96700 50%);
+  background-size: 300% 100%;
+  background-position: center right;
+  color: white;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button[class*="btn-"] svg
+{
+  stroke: #FFB32B;
+  width: 1.25rem;  
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+button[class*="primary"]:hover
+{
+  background-position: center left;
+  cursor: pointer;
+}
+
+button[class*="primary"]:focus-within
+{
+  outline-color: #00B9FF;
+}
+
+
+
+      @media screen and (max-width: 800px){
+
+        .divider-banner-wrapper
+        {
+          flex-direction: column;
+        }
+
+        .content-wrapper
+        {
+          flex-direction: column;
+          padding-bottom: 32px;
+        }
+
+        .banner-hero
+        {
+          position: relative;
+          min-height: 40vh;
+          width: 100%;
+          left: 0;
+        }
+
+        .banner-hero::before
+        {
+          top: -1%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('assets/mynrma-line-divider-mask-a-vertical.png');
+        }
+
+        .alt-mobile .banner-hero::before
+        {
+          background-image: url('assets/mynrma-line-divider-mask-a-vertical-alt.png') !important;
+        }
+
+        h1
+        {
+          font-size: 42px;
+        }
+
+      }
+
+
+.divider-banner-wrapper.banner-mask 
+{
+  background: var(--mynrma-white);
+}
+
+.divider-banner-wrapper.banner-mask::after
+{
+  content: none;
+}
+
+.banner-mask .banner-hero
+{
+  overflow: hidden;
+}
+
+.banner-mask .banner-hero::before
+{
+  top: -1%;
+  left: -1%;
+  background-image: url('assets/mynrma-mask-a.png') !important;
+  background-size: cover;
+  background-position: bottom left;
+  width: 102%;
+  height: 102%;
+  filter: drop-shadow(12px 6px 6px rgba(0 ,0, 0, 0.15));
+}
+
+
+
+
+.banner-mask .content-wrapper
+{
+  padding-bottom: 148px;
+  color: var(--mynrma-text);
+  font-size: 17px;
+}
+
+.banner-mask .content-wrapper p
+{
+  color: var(--mynrma-text-light);
+}
+
+      @media screen and (max-width: 800px){
+        .divider-banner-wrapper.banner-mask 
+        {
+          flex-direction: column-reverse;
+        }
+        .banner-mask .banner-hero
+        {
+          min-height: 25vh;
+        }
+        .banner-mask .content-wrapper
+        {
+          padding-block: 32px;
+        }
+        .banner-mask .banner-hero::before
+        {
+          background-position: bottom center;
+        }
+
+      }
+      
+
+.banner-mask.alt-mask .banner-hero::before
+{
+  left: 0;
+  bottom: 0;
+  background-image: url('assets/mynrma-mask-b.png') !important;
+}
+
+@media (min-width:800px) and (max-width:1200px) {
+  .tablet-opt .banner-hero,
+  .banner-mask.alt-mask .banner-hero
+  {
+    left: 40%;
+    width: 60%;
+  }
+  .tablet-opt .content-wrapper,
+  .banner-mask.alt-mask .content-wrapper
+  {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+  .tablet-opt .content-a,
+  .banner-mask.alt-mask .content-a
+  {
+    max-width: 38%;
+  }
+}
