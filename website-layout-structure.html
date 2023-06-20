@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>My NRMA Banner PoC</title>
+
+    <link rel="stylesheet" href="banner-styles.css">
+</head>
+
+<style>
+
+:root
+{
+  --my-size-0-5: 4px;
+  --my-size-1: 8px;
+  --my-size-2: 16px;
+  --my-size-3: 24px;
+  --my-size-4: 32px;
+  --my-size-5: 40px;
+  --my-size-6: 48px;
+  --my-size-7: 56px;
+  --my-size-8: 64px;
+  --my-size-9: 72px;
+  --my-size-10: 80px;
+  --my-size-11: 88px;
+  --my-size-12: 96px;
+  --my-size-13: 104px;
+  --my-size-14: 112px;
+  --my-size-15: 120px;
+  --my-size-16: 128px;
+  --my-size-17: 136px;
+  --my-size-18: 144px;
+  --my-size-19: 152px;
+  --my-size-20: 160px;
+
+}
+
+*
+{
+  box-sizing: border-box; 
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content p
+{
+  margin-block-end: 1.6ch;
+}
+
+.header
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.header > div
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #C6C6D0;
+}
+
+.content-wrapper
+{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-block: var(--my-size-6);
+}
+
+.content
+{
+  width: min(1140px, calc(100% - var(--my-size-6)));
+}
+
+[class*="columns-"]
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--my-size-2);
+  margin-bottom: var(--my-size-3);
+}
+
+div[class*="columns-"] > div
+{
+  flex-basis: calc(25% - 1rem);
+  border: 1px solid #C6C6D0;
+  padding: var(--my-size-3);
+}
+
+.columns-2
+{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.columns-3
+{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.columns-4
+{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.columns-5
+{
+  grid-template-columns: repeat(5, 1fr);
+}
+
+        /* New Breakpoint */
+        @media screen and (max-width: 1140px){
+          .columns-4, .columns-5
+                  {
+                    grid-template-columns: repeat(3, 1fr);
+                  }
+        }
+
+                  /* Tailwind - 1024 = lg */
+                  @media screen and (max-width: 1024px){ 
+
+                }
+
+                          /* Tailwind - 768 = md */
+                          @media screen and (max-width: 768px){ 
+                            .columns-2, .columns-3, .columns-4, .columns-5
+                            {
+                              grid-template-columns: repeat(2, 1fr);
+                            }
+                          }
+
+                                  /* New Breakpoint - 640 = sm */
+                                  @media screen and (max-width: 640px){
+                                    .columns-2, .columns-3, .columns-4, .columns-5
+                                    {
+                                      grid-template-columns: repeat(1, 1fr);
+                                    }
+                                  }
+
+.footer
+{
+  background: #313135;
+  color: white;
+  padding: var(--my-size-10);
+}
+
+</style>
+
+<body>
+    
+  <div class="header">
+    <div>
+      <p>Logo</p>
+      <p>Search | Contact | Sign In</p>
+    </div>
+    <div>
+      <p>Menu Item | Menu Item | Menu Item</p>
+      <p>Business Link</p>
+    </div>
+  </div>
+  
+  <div class="content-wrapper">
+    <div class="content">
+      <h2>Main Content Area</h2>
+      <p>Max Width = 1140px. Below 1140px</p>
+      <p>Responsive: Breakppint lg = 100% - 48px (size variable 6)</p>
+      <p><br></p>
+      <h3>Columns</h3>
+
+      <p><strong>2 Columns</strong></p>
+      <div class="columns-2">
+        <div>Column</div><div>Column</div>
+      </div>
+
+      <p><strong>3 Columns</strong></p>
+      <div class="columns-3">
+        <div>Column</div><div>Column</div><div>Column</div>
+      </div>
+
+      <p><strong>4 Columns</strong></p>
+      <div class="columns-4">
+        <div>Column</div><div>Column</div><div>Column</div><div>Column</div>
+      </div>
+
+      <p><strong>5 Columns</strong></p>
+      <div class="columns-5">
+        <div>Column</div><div>Column</div><div>Column</div><div>Column</div>
+        <div>Column</div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="content-wrapper">
+      <div class="content">
+        <p>Footer Content</p>
+      </div>
+    </div>
+    
+  </div>
+    
+</body>
+</html>
