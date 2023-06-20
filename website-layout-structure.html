@@ -85,6 +85,8 @@ div[class*="columns-"] > div
   flex-basis: calc(25% - 1rem);
   border: 1px solid #C6C6D0;
   padding: var(--my-size-3);
+  background: white;
+  border-radius: var(--my-size-0-5);
 }
 
 .columns-2
@@ -107,9 +109,14 @@ div[class*="columns-"] > div
   grid-template-columns: repeat(5, 1fr);
 }
 
+.columns-6
+{
+  grid-template-columns: repeat(6, 1fr);
+}
+
         /* New Breakpoint */
         @media screen and (max-width: 1140px){
-          .columns-4, .columns-5
+          .columns-4, .columns-5, .columns-6
                   {
                     grid-template-columns: repeat(3, 1fr);
                   }
@@ -122,7 +129,7 @@ div[class*="columns-"] > div
 
                           /* Tailwind - 768 = md */
                           @media screen and (max-width: 768px){ 
-                            .columns-2, .columns-3, .columns-4, .columns-5
+                            .columns-2, .columns-3, .columns-4, .columns-5, .columns-5
                             {
                               grid-template-columns: repeat(2, 1fr);
                             }
@@ -130,11 +137,16 @@ div[class*="columns-"] > div
 
                                   /* New Breakpoint - 640 = sm */
                                   @media screen and (max-width: 640px){
-                                    .columns-2, .columns-3, .columns-4, .columns-5
+                                    .columns-2, .columns-3, .columns-4, .columns-5, .columns-6
                                     {
                                       grid-template-columns: repeat(1, 1fr);
                                     }
                                   }
+
+.content-wrapper.example
+{
+  background: #E5F8FF;
+}
 
 .footer
 {
@@ -168,26 +180,41 @@ div[class*="columns-"] > div
 
       <p><strong>2 Columns</strong></p>
       <div class="columns-2">
-        <div>Column</div><div>Column</div>
+        <div>Column <br>Desktop 562px</p></div><div>Column <br>Desktop 562px</div>
       </div>
 
       <p><strong>3 Columns</strong></p>
       <div class="columns-3">
-        <div>Column</div><div>Column</div><div>Column</div>
+        <div>Column <br>Desktop 369px</div><div>Column <br>Desktop 369px</div><div>Column <br>Desktop 369px</div>
       </div>
 
       <p><strong>4 Columns</strong></p>
       <div class="columns-4">
-        <div>Column</div><div>Column</div><div>Column</div><div>Column</div>
+        <div>Column <br>Desktop 273px</div><div>Column <br>Desktop 273px</div><div>Column <br>Desktop 273px</div><div>Column <br>Desktop 273px</div>
       </div>
 
       <p><strong>5 Columns</strong></p>
       <div class="columns-5">
-        <div>Column</div><div>Column</div><div>Column</div><div>Column</div>
-        <div>Column</div>
+        <div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div>
+      </div>
+
+      <p><strong>6 Columns</strong></p>
+      <div class="columns-6">
+        <div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div>
       </div>
 
     </div>
+  </div>
+
+  <div class="content-wrapper example">
+    <div class="content">
+      <h3>Section Example</h3>
+      <p>Example content area.</p>
+      <p><strong>3 Columns</strong></p>
+      <div class="columns-3">
+        <div>Column <br>Desktop 369px</div><div>Column <br>Desktop 369px</div><div>Column <br>Desktop 369px</div>
+      </div>
+  </div>
   </div>
   
   <div class="footer">
