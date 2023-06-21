@@ -7,31 +7,7 @@
 
 <style>
 
-:root
-{
-  --my-size-0-5: 4px;
-  --my-size-1: 8px;
-  --my-size-2: 16px;
-  --my-size-3: 24px;
-  --my-size-4: 32px;
-  --my-size-5: 40px;
-  --my-size-6: 48px;
-  --my-size-7: 56px;
-  --my-size-8: 64px;
-  --my-size-9: 72px;
-  --my-size-10: 80px;
-  --my-size-11: 88px;
-  --my-size-12: 96px;
-  --my-size-13: 104px;
-  --my-size-14: 112px;
-  --my-size-15: 120px;
-  --my-size-16: 128px;
-  --my-size-17: 136px;
-  --my-size-18: 144px;
-  --my-size-19: 152px;
-  --my-size-20: 160px;
-
-}
+@import url(foundation-styles.css);
 
 *
 {
@@ -155,6 +131,12 @@ div[class*="columns-"] > div
   padding: var(--my-size-10);
 }
 
+.sticky, .menu-div
+{
+  position: sticky;
+  top: 0px;
+}
+
 </style>
 
 <body>
@@ -164,11 +146,13 @@ div[class*="columns-"] > div
       <p>Logo</p>
       <p>Search | Contact | Sign In</p>
     </div>
-    <div>
+    <div class="menu-div">
       <p>Menu Item | Menu Item | Menu Item</p>
       <p>Business Link</p>
     </div>
   </div>
+
+  <div class="sticky"> sdfsdf sdfsdf</div>
   
   <div class="content-wrapper">
     <div class="content">
@@ -206,6 +190,7 @@ div[class*="columns-"] > div
 
     </div>
   </div>
+
 
   <div class="content-wrapper example">
     <div class="content">

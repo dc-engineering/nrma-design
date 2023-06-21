@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>My NRMA Website Layout Structure</title>
+</head>
+
+<style>
+
+@import url(foundation-styles.css);
+
+
+*
+{
+  box-sizing: border-box; 
+  margin: 0;
+  font-family: sans-serif;
+}
+
+button
+{
+  margin: 1rem;
+}
+
+
+button[class*="btn-"]
+{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--my-size-0-5);
+  padding: var(--my-size-1) var(--my-size-3);
+  min-height: var(--my-size-6);
+  line-height: 1;
+  border-radius: 999rem;
+  border: none;
+  font-size: var(--size-button-text);
+  transition: var(--transition);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  vertical-align: middle;
+}
+
+button[class*="btn-"] svg
+{
+  width: var(--my-size-3);  
+  fill: currentColor;
+}
+
+button[class*="primary"]
+{
+  background-color: var(--my-mid-blue);
+  color: white;
+}
+
+    button[class*="primary"]:hover
+    {
+      background-color: var(--my-dark-blue);
+      cursor: pointer;
+    }
+
+    button[class*="primary"]:focus-within
+    {
+      outline-color: var(--my-light-blue);
+    }
+
+
+
+button[class*="cta"]
+{
+  background: linear-gradient(33deg, #C70000 -100%, #F96700 50%);
+  background-size: 300% 100%;
+  background-position: center right;
+  color: white;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button[class*="cta"] svg
+{
+  stroke: #FFB32B;
+  width: 1.25rem;  
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+button[class*="cta"]:hover
+{
+  background-position: center left;
+  cursor: pointer;
+}
+
+button[class*="cta"]:focus-within
+{
+  outline-color: #00B9FF;
+}
+
+
+
+
+button[class*="tertiary"]
+{
+  background-color: transparent;
+  color: var(--my-mid-blue);
+  border: 1px solid var(--my-neutral-100);
+  outline-offset: 0px;
+}
+
+button[class*="tertiary"]:hover
+{
+  color: var(--my-dark-blue);
+  border-color: var(--my-neutral-300);
+  cursor: pointer;
+}
+
+button[class*="tertiary"]:focus-within
+{
+  outline-color: #00B9FF;
+  border-color: transparent;
+}
+
+
+
+
+button[class*="text-link"]
+{
+  background-color: transparent;
+  color: var(--my-mid-blue);
+  padding: var(--my-size-1) 0px;
+  border-radius: var(--my-size-1);
+  outline-offest: var(--my-size-0-5);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+
+}
+
+button[class*="text-link"]:hover
+{
+  color: var(--my-dark-blue);
+  text-decoration-color: var(--my-dark-blue);
+  border-color: transparent;
+  cursor: pointer;
+}
+
+button[class*="text-link"]:focus-within
+{
+  outline-color: var(--my-light-blue);
+  border-color: transparent;
+}
+
+
+
+
+</style>
+
+<body>
+    
+<h1>Primary</h1>
+
+<button class="btn-primary">Button</button>
+
+<button class="btn-primary">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
+</button>
+
+<button class="btn-primary">
+  <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
+  Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<h1>CTA</h1>
+
+<button class="btn-cta">Button</button>
+
+<button class="btn-cta">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
+</button>
+
+<button class="btn-cta">
+  <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
+  Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<h1>Tertiary</h1>
+
+<button class="btn-tertiary">Button</button>
+
+<button class="btn-tertiary">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
+</button>
+
+<button class="btn-tertiary">
+  <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
+  Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<h1>Text</h1>
+
+<button class="btn-text-link">Button</button>
+
+<button class="btn-text-link">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
+</button>
+
+<button class="btn-text-link">
+  <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
+  Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+
+
+</body>
+</html>
