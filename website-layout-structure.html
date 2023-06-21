@@ -13,7 +13,6 @@
 {
   box-sizing: border-box; 
   margin: 0;
-  font-family: sans-serif;
 }
 
 .content h1, .content h2, .content h3, .content h4, .content p
@@ -90,7 +89,7 @@ div[class*="columns-"] > div
   grid-template-columns: repeat(6, 1fr);
 }
 
-        /* New Breakpoint */
+        /* Updated Breakpoint from 1024px = lg breakpoint */
         @media screen and (max-width: 1140px){
           .columns-4, .columns-5, .columns-6
                   {
@@ -98,26 +97,21 @@ div[class*="columns-"] > div
                   }
         }
 
-                  /* Tailwind - 1024 = lg */
-                  @media screen and (max-width: 1024px){ 
+                  /* Tailwind - 768 = md */
+                  @media screen and (max-width: 768px){ 
+                    .columns-2, .columns-3, .columns-4, .columns-5, .columns-5
+                    {
+                      grid-template-columns: repeat(2, 1fr);
+                    }
+                  }
 
-                }
-
-                          /* Tailwind - 768 = md */
-                          @media screen and (max-width: 768px){ 
-                            .columns-2, .columns-3, .columns-4, .columns-5, .columns-5
+                          /* New Breakpoint - 640 = sm */
+                          @media screen and (max-width: 640px){
+                            .columns-2, .columns-3, .columns-4, .columns-5, .columns-6
                             {
-                              grid-template-columns: repeat(2, 1fr);
+                              grid-template-columns: repeat(1, 1fr);
                             }
                           }
-
-                                  /* New Breakpoint - 640 = sm */
-                                  @media screen and (max-width: 640px){
-                                    .columns-2, .columns-3, .columns-4, .columns-5, .columns-6
-                                    {
-                                      grid-template-columns: repeat(1, 1fr);
-                                    }
-                                  }
 
 .content-wrapper.example
 {
@@ -131,10 +125,19 @@ div[class*="columns-"] > div
   padding: var(--my-size-10);
 }
 
-.sticky, .menu-div
+.sticky
 {
   position: sticky;
   top: 0px;
+  display: flex;
+  justify-content: center;
+  gap: var(--my-size-2);
+  flex-wrap: wrap;
+  width: min(1140px, 100%);
+  background: var(--my-white);
+  padding-block: var(--my-size-2);
+  z-index: 999;
+  border-bottom: 1px solid var(--my-border);
 }
 
 </style>
@@ -152,7 +155,6 @@ div[class*="columns-"] > div
     </div>
   </div>
 
-  <div class="sticky">Inliee Sticky Test</div>
   
   <div class="content-wrapper">
     <div class="content">
@@ -160,6 +162,16 @@ div[class*="columns-"] > div
       <p>Max Width = 1140px. Below 1140px</p>
       <p>Responsive: Breakppint lg = 100% - 48px (size variable 6)</p>
       <p><br></p>
+
+
+      <div class="sticky">
+        On This Page
+        <a href="#">Anchor Link</a><a href="#">Anchor Link</a><a href="#">Anchor Link</a><a href="#">Anchor Link</a><a href="#">Anchor Link</a><a href="#">Anchor Link</a>
+      </div>
+
+      <p><br></p>
+
+
       <h3>Columns</h3>
       <p>Default column gap is 16px or spacing-1. Gap large is 32px or spcaing-2.</p>
 
@@ -190,6 +202,7 @@ div[class*="columns-"] > div
 
     </div>
   </div>
+
 
 
   <div class="content-wrapper example">
