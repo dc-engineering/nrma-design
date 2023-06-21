@@ -62,3 +62,81 @@
   --transition: 0.4s ease;
 
 }
+
+
+@font-face {
+  font-family: 'GT Eesti Display';
+  src: url('fonts/GTEestiDisplay-Medium.woff2') format('woff2'),
+      url('fonts/GTEestiDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Eesti Display';
+  src: url('fonts/GTEestiDisplay-Medium.woff2') format('woff2'),
+      url('fonts/GTEestiDisplay-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Eesti Display';
+  src: url('fonts/GTEestiDisplay-Regular.woff2') format('woff2'),
+      url('fonts/GTEestiDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Eesti Display';
+  src: url('fonts/GTEestiDisplay-RegularItalic.woff2') format('woff2'),
+      url('fonts/GTEestiDisplay-RegularItalic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+
+
+@font-face {
+  font-family: 'GT Eesti Text';
+  src: url('fonts/GTEestiText-Light.woff2') format('woff2'),
+      url('fonts/GTEestiText-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Eesti Text';
+  src: url('fonts/GTEestiText-BoldItalic.woff2') format('woff2'),
+      url('fonts/GTEestiText-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Eesti Text';
+  src: url('fonts/GTEestiText-Bold.woff2') format('woff2'),
+      url('fonts/GTEestiText-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Eesti Text';
+  src: url('fonts/GTEestiText-LightItalic.woff2') format('woff2'),
+      url('fonts/GTEestiText-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+

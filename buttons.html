@@ -17,9 +17,24 @@
   font-family: sans-serif;
 }
 
+body
+{
+  margin: 5%;
+}
+
+h1, h2, h3, h4, p
+{
+  margin-block: 1.2ch;
+}
+
+hr
+{
+  margin-block: 3rem;
+}
+
 button
 {
-  margin: 1rem;
+  margin: 0 1rem 1rem 0;
 }
 
 
@@ -31,9 +46,10 @@ button[class*="btn-"]
   gap: var(--my-size-0-5);
   padding: var(--my-size-1) var(--my-size-3);
   min-height: var(--my-size-6);
-  line-height: 1;
+  line-height: 1.2;
   border-radius: 999rem;
   border: none;
+  font-family: 'GT Eesti Display', sans-serif;
   font-size: var(--size-button-text);
   transition: var(--transition);
   outline: 2px solid transparent;
@@ -46,6 +62,8 @@ button[class*="btn-"] svg
   width: var(--my-size-3);  
   fill: currentColor;
 }
+
+
 
 button[class*="primary"]
 {
@@ -61,7 +79,7 @@ button[class*="primary"]
 
     button[class*="primary"]:focus-within
     {
-      outline-color: var(--my-light-blue);
+      outline-color: var(--my-mid-blue);
     }
 
 
@@ -90,7 +108,7 @@ button[class*="cta"]:hover
 
 button[class*="cta"]:focus-within
 {
-  outline-color: #00B9FF;
+  outline-color: var(--my-mid-blue);
 }
 
 
@@ -113,7 +131,7 @@ button[class*="tertiary"]:hover
 
 button[class*="tertiary"]:focus-within
 {
-  outline-color: #00B9FF;
+  outline-color: var(--my-mid-blue);
   border-color: transparent;
 }
 
@@ -143,73 +161,115 @@ button[class*="text-link"]:hover
 
 button[class*="text-link"]:focus-within
 {
-  outline-color: var(--my-light-blue);
+  outline-color: var(--my-mid-blue);
   border-color: transparent;
 }
 
+@media screen and (max-width: 640px){
+  button
+  {
+    margin: 0 0 1rem 0;
+  }
+  button[class*="primary"], button[class*="cta"], button[class*="tertiary"]
+  {
+    width: 100%;
+  }
+
+}
 
 
 
 </style>
 
 <body>
+
+<h1>Button Variations</h1>
+<p>Note: ContentEditable is set on the button demo's to allow quick editing.</p>
     
-<h1>Primary</h1>
+<h2>Primary</h2>
 
-<button class="btn-primary">Button</button>
+<button contenteditable class="btn-primary">Button</button>
 
-<button class="btn-primary">Button
+<button contenteditable class="btn-primary">Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
 </button>
 
-<button class="btn-primary">
+<button contenteditable class="btn-primary">
   <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
   Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
 </button>
 
-<h1>CTA</h1>
+<h2>CTA</h2>
 
-<button class="btn-cta">Button</button>
+<button contenteditable class="btn-cta">Button</button>
 
-<button class="btn-cta">Button
+<button contenteditable class="btn-cta">Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
 </button>
 
-<button class="btn-cta">
+<button contenteditable class="btn-cta">
   <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
   Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
 </button>
 
-<h1>Tertiary</h1>
+<h2>Tertiary</h2>
 
-<button class="btn-tertiary">Button</button>
+<button contenteditable class="btn-tertiary">Button</button>
 
-<button class="btn-tertiary">Button
+<button contenteditable class="btn-tertiary">Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
 </button>
 
-<button class="btn-tertiary">
+<button contenteditable class="btn-tertiary">
   <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
   Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
 </button>
 
-<h1>Text</h1>
+<h2>Text</h2>
 
-<button class="btn-text-link">Button</button>
+<button contenteditable class="btn-text-link">Button</button>
 
-<button class="btn-text-link">Button
+<button contenteditable class="btn-text-link">Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>
 </button>
 
-<button class="btn-text-link">
+<button contenteditable class="btn-text-link">
   <svg viewBox="0 0 24 24"><path d="M15.7254 5.27371C15.3604 4.90876 14.772 4.90876 14.4071 5.27371L8.21785 11.4629C7.92738 11.7534 7.92738 12.2226 8.21785 12.5131L14.4071 18.7023C14.772 19.0673 15.3604 19.0673 15.7254 18.7023C16.0903 18.3374 16.0903 17.749 15.7254 17.384L10.3331 11.9843L15.7328 6.58454C16.0903 6.22704 16.0903 5.63121 15.7254 5.27371Z"/></svg>  
   Button
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
 </button>
 
+<hr>
+
+<h1>Responsiveness</h1>
+
+<h2>Max & Min</h2>
+<p>Note: Primary, CTA, Tertiary all have the same max/min behaviour.<br><br></p>
+
+<button contenteditable class="btn-primary">
+  Ok
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-primary">
+  It's supercalifragilisticexpialidocious, even though the sound of it is something quite atrocious.
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<div></div>
+
+<button contenteditable class="btn-text-link">
+  Ok
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-text-link">
+  It's supercalifragilisticexpialidocious, even though the sound of it is something quite atrocious.
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
 
 
 </body>
