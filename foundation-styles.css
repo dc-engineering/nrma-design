@@ -56,6 +56,11 @@
   --my-border: var(--my-neutral-100);
   --my-border-light: var(--my-neutral-50);
 
+  --my-button-shadow: 0px 2px 4px rgba(25, 30, 36, 0.12);
+  --my-button-shadow-hover: 0px 0px 0px rgba(25, 30, 36, 0.12);
+
+  --my-button-text-shadow: 0px 1px 2px rgba(25, 30, 36, 0.2);
+
   --size-body: 17px;
   --size-button-text: var(--size-body);
 

@@ -69,12 +69,15 @@ button[class*="primary"]
 {
   background-color: var(--my-mid-blue);
   color: white;
+  box-shadow: var(--my-button-shadow);
+  text-shadow: var(--my-button-text-shadow);
 }
 
     button[class*="primary"]:hover
     {
       background-color: var(--my-dark-blue);
       cursor: pointer;
+      box-shadow: var(--my-button-shadow-hover);
     }
 
     button[class*="primary"]:focus-within
@@ -90,20 +93,21 @@ button[class*="cta"]
   background-size: 300% 100%;
   background-position: center right;
   color: white;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--my-button-text-shadow);
+  box-shadow: var(--my-button-shadow);
 }
 
 button[class*="cta"] svg
 {
-  stroke: #FFB32B;
+  fill: var(--my-light-orange);
   width: 1.25rem;  
-  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 button[class*="cta"]:hover
 {
-  background-position: center left;
+  background-position: bottom left;
   cursor: pointer;
+  box-shadow: var(--my-button-shadow-hover);
 }
 
 button[class*="cta"]:focus-within
