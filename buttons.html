@@ -20,6 +20,7 @@
 body
 {
   margin: 5%;
+  min-height: 166vh;
 }
 
 h1, h2, h3, h4, p
@@ -67,14 +68,25 @@ button[class*="btn-"] svg
 
 button[class*="primary"]:disabled, 
 button[class*="cta"]:disabled, 
-button[class*="tertiary"]:disabled
+button[class*="tertiary"]:disabled,
+button[class*="primary"]:disabled:hover, 
+button[class*="cta"]:disabled:hover, 
+button[class*="tertiary"]:disabled:hover
 {
-  background-color: var(--my-neutral-100);
-  color: var(--my-neutral-700);
-  cursor: not-allowed;
+  background: var(--my-neutral-100);
+  color: var(--my-neutral-600);
+  cursor: not-allowed !important;
+  text-shadow: none;
+  box-shadow: none;
 }
 
-button[class*="text-link"]:disabled
+button:disabled svg
+{
+  fill: currentColor !important;
+}
+
+button[class*="text-link"]:disabled,
+button[class*="text-link"]:disabled:hover
 {
   color: var(--my-neutral-600);
 }
@@ -100,6 +112,24 @@ button[class*="primary"]
       outline-color: var(--my-mid-blue);
     }
 
+button[class*="primary-inverted"]
+{
+  background: var(--my-white);
+  color: var(--my-mid-blue);
+  text-shadow: none;
+}
+
+    button[class*="primary-inverted"]:hover
+    {
+      background: var(--my-white);
+      color: var(--my-dark-blue);
+    }
+
+    button[class*="primary-inverted"]:hover svg
+    {
+      fill: var(--my-light-blue);
+    }
+
 
 
 button[class*="cta"]
@@ -118,19 +148,17 @@ button[class*="cta"] svg
   width: 1.25rem;  
 }
 
-button[class*="cta"]:hover
-{
-  background-position: bottom left;
-  cursor: pointer;
-  box-shadow: var(--my-button-shadow-hover);
-}
+    button[class*="cta"]:hover
+    {
+      background-position: bottom left;
+      cursor: pointer;
+      box-shadow: var(--my-button-shadow-hover);
+    }
 
-button[class*="cta"]:focus-within
-{
-  outline-color: var(--my-mid-blue);
-}
-
-
+    button[class*="cta"]:focus-within
+    {
+      outline-color: var(--my-mid-blue);
+    }
 
 
 button[class*="tertiary"]
@@ -141,20 +169,30 @@ button[class*="tertiary"]
   outline-offset: 0px;
 }
 
-button[class*="tertiary"]:hover
+    button[class*="tertiary"]:hover
+    {
+      color: var(--my-dark-blue);
+      border-color: var(--my-neutral-300);
+      cursor: pointer;
+    }
+
+    button[class*="tertiary"]:focus-within
+    {
+      outline-color: var(--my-mid-blue);
+      border-color: transparent;
+    }
+
+
+button[class*="tertiary-inverted"]
 {
-  color: var(--my-dark-blue);
-  border-color: var(--my-neutral-300);
-  cursor: pointer;
+  color: var(--my-white);
 }
 
-button[class*="tertiary"]:focus-within
-{
-  outline-color: var(--my-mid-blue);
-  border-color: transparent;
-}
-
-
+    button[class*="tertiary-inverted"]:hover
+    {
+      color: var(--my-white);
+      border-color: var(--my-light-blue);
+    }
 
 
 button[class*="text-link"]
@@ -165,24 +203,48 @@ button[class*="text-link"]
   border-radius: var(--my-size-1);
   outline-offest: var(--my-size-0-5);
   text-decoration: underline;
+  text-decoration-color: currentColor;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
-
 }
 
-button[class*="text-link"]:hover
+    button[class*="text-link"]:hover
+    {
+      color: var(--my-dark-blue);
+      text-decoration-color: var(--my-dark-blue);
+      border-color: transparent;
+      cursor: pointer;
+    }
+
+    button[class*="text-link"]:focus-within
+    {
+      outline-color: var(--my-mid-blue);
+      border-color: transparent;
+    }
+
+
+button[class*="text-link-inverted"]
 {
-  color: var(--my-dark-blue);
-  text-decoration-color: var(--my-dark-blue);
-  border-color: transparent;
-  cursor: pointer;
+  color: var(--my-white);
 }
 
-button[class*="text-link"]:focus-within
+    button[class*="text-link-inverted"]:hover
+    {
+      color: var(--my-turquoise);
+      text-decoration-color: currentColor;
+      border-color: transparent;
+    }
+
+/* Change inverted focus outline colour*/
+
+button[class*="primary-inverted"]:focus-within,
+button[class*="tertiary-inverted"]:focus-within,
+button[class*="text-link-inverted"]:focus-within
 {
-  outline-color: var(--my-mid-blue);
-  border-color: transparent;
+  outline-color: var(--my-white);
 }
+
+
 
 @media screen and (max-width: 640px){
   button
@@ -199,6 +261,7 @@ button[class*="text-link"]:focus-within
 .example-bg
 {
   padding: var(--my-size-4);
+  border-radius: var(--my-size-1);
 }
 
 
@@ -251,7 +314,7 @@ button[class*="text-link"]:focus-within
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
 </button>
 
-<h2>Text</h2>
+<h2>Text Link</h2>
 
 <button contenteditable class="btn-text-link">Button</button>
 
@@ -266,7 +329,7 @@ button[class*="text-link"]:focus-within
 </button>
 
 
-
+<br><br>
 <h2>Inverted Buttons</h2>
 <p>Used for matching or darker background colours.</p>
 
@@ -287,7 +350,7 @@ button[class*="text-link"]:focus-within
 </div>
 
 
-
+<br><br>
 <h2>Disabled</h2>
 
 <button contenteditable class="btn-primary" disabled>Button
@@ -312,6 +375,7 @@ button[class*="text-link"]:focus-within
 
 <h1>Responsiveness</h1>
 
+<br><br>
 <h2>Max & Min</h2>
 <p>Note: Primary, CTA, Tertiary all have the same max/min behaviour.<br><br></p>
 
@@ -334,6 +398,50 @@ button[class*="text-link"]:focus-within
 
 <button contenteditable class="btn-text-link">
   It's supercalifragilisticexpialidocious, even though the sound of it is something quite atrocious.
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<br><br>
+<h2>Common Patterns</h2>
+<p>Common buttons pairings and layouts. Note: that component specific layout rules may apply, such as center align text-link style buttons.</p>
+<br>
+
+<button contenteditable class="btn-cta">Join today
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-text-link">Learn more
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<div><p><br></p></div>
+
+<button contenteditable class="btn-primary">View Insurance
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-text-link">Learn more
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<div><p><br></p></div>
+
+<button contenteditable class="btn-tertiary">View service
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-text-link">Learn more
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+
+<div><p><br></p></div>
+
+<button contenteditable class="btn-tertiary">Get Quote
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-tertiary">See Inclusions
   <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
 </button>
 
