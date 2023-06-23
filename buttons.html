@@ -66,6 +66,18 @@ button[class*="btn-"] svg
   fill: currentColor;
 }
 
+button[class*="btn-"].small
+{
+  padding: var(--my-size-0-5) var(--my-size-2);
+  min-height: var(--my-size-5);
+  font-size: var(--size-button-text-small);
+}
+
+button[class*="text-link"].small
+{
+  padding: var(--my-size-1) 0px;
+}
+
 button[class*="primary"]:disabled, 
 button[class*="cta"]:disabled, 
 button[class*="tertiary"]:disabled,
@@ -348,6 +360,25 @@ button[class*="text-link-inverted"]:focus-within
     </button>
 
 </div>
+
+<br><br>
+<h2>Sizes</h2>
+
+<button contenteditable class="btn-primary small">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-cta small">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-tertiary small">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
+
+<button contenteditable class="btn-text-link small">Button
+  <svg viewBox="0 0 24 24"><path d="M8.27465 5.27371C8.6396 4.90876 9.22798 4.90876 9.59293 5.27371L15.7821 11.4629C16.0726 11.7534 16.0726 12.2226 15.7821 12.5131L9.59293 18.7023C9.22798 19.0673 8.6396 19.0673 8.27465 18.7023C7.9097 18.3374 7.9097 17.749 8.27465 17.384L13.6669 11.9843L8.2672 6.58454C7.9097 6.22704 7.9097 5.63121 8.27465 5.27371Z"/></svg>  
+</button>
 
 
 <br><br>
