@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>My NRMA Website Layout Structure</title>
+</head>
+
+<style>
+
+@import url(foundation-styles.css);
+
+*
+{
+  box-sizing: border-box; 
+  margin: 0;
+}
+
+html, body
+{
+  font-family: 'GT Eesti Text', sans-serif;
+}
+
+h1, h2, h3, h4, p
+{
+  margin-block-end: 1.6ch !important;
+  line-height: 1.4;
+}
+
+.container-wrapper
+{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-block: var(--my-size-6);
+  background: var(--my-white);
+}
+
+.container
+{
+  width: min(1140px, calc(100% - var(--my-size-6)));
+}
+
+.container.small
+{
+  width: min(749px, calc(100% - var(--my-size-6)));
+}
+
+.container.full-width
+{
+  width: calc(100% - var(--my-size-6));
+}
+
+/* Padding ------------------------- */
+
+.container-wrapper.pad-both-sml
+{
+  padding-block: var(--my-size-3);
+}
+
+.container-wrapper.pad-both-med
+{
+  padding-block: var(--my-size-9);
+}
+
+.container-wrapper.pad-both-lrg
+{
+  padding-block: var(--my-size-15);
+}
+
+/* Background ------------------------- */
+
+.container-wrapper.bg-light-blue
+{
+  background: var(--my-bg-light-blue);
+}
+
+.container-wrapper.bg-light-grey
+{
+  background: var(--my-bg-light-grey);
+}
+
+/* Columns ------------------------- */
+
+[class*="columns-"]
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--my-size-2);
+  margin-bottom: var(--my-size-3);
+}
+
+[class*="columns-"].gap-lrg
+{
+  grid-gap: var(--my-size-4);
+}
+
+div[class*="columns-"] > div
+{
+  flex-basis: calc(25% - 1rem);
+}
+
+.columns-2
+{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.columns-3
+{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.columns-4
+{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.columns-5
+{
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.columns-6
+{
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.columns-33-66
+{
+  grid-template-columns: 1fr 2fr;
+}
+
+.columns-66-33
+{
+  grid-template-columns: 2fr 1fr;
+}
+
+
+.first-column-100 div:first-of-type
+{
+  grid-column: 1/-1;
+}
+
+
+        /* Updated Breakpoint from 1024px = lg breakpoint */
+        @media screen and (max-width: 1140px){
+          .columns-4, .columns-5, .columns-6
+                  {
+                    grid-template-columns: repeat(3, 1fr);
+                  }
+        }
+
+                  /* Tailwind - 768 = md */
+                  @media screen and (max-width: 768px){ 
+                    .columns-2, .columns-3, .columns-4, .columns-5, .columns-5, .columns-33-66, .columns-66-33
+                    {
+                      grid-template-columns: repeat(2, 1fr);
+                    }
+                  }
+
+                          /* New Breakpoint - 640 = sm */
+                          @media screen and (max-width: 640px){
+                            .columns-2, .columns-3, .columns-4, .columns-5, .columns-6, .columns-33-66, .columns-66-33
+                            {
+                              grid-template-columns: repeat(1, 1fr);
+                            }
+                          }
+
+.content-wrapper.example
+{
+  background: #E5F8FF;
+}
+
+</style>
+
+<body>
+
+
+
+  <div class="container-wrapper pad-both-med">
+    <div class="container">
+      <h1>Container Examples</h1>
+      <p>The below examples show the container with dummy content. These are not all variations of the container but 
+        show an example of the key options liek spacing, column amounts & backgrounds.</p>
+        <hr>
+    </div>
+  </div>
+  
+
+  <div class="container-wrapper pad-both-sml">
+    <div class="container">
+      <h2>Container</h2>
+      <p>Col 1, Pad Sml</p>
+      <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+    </div>
+  </div>
+
+  <div class="container-wrapper pad-both-med">
+    <div class="container small">
+      <h2>Container</h2>
+      <p>Col 1, Pad Med, Width Small</p>
+      <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+    </div>
+  </div>
+
+  <div class="container-wrapper pad-both-med">
+    <div class="container full-width">
+      <h2>Container</h2>
+      <p>Col 1, Pad Med, Width Full</p>
+      <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+    </div>
+  </div>
+
+  <div class="container-wrapper pad-both-med bg-light-blue">
+    <div class="container columns-2">
+      <div>
+        <h2>Container</h2>
+        <p>Col 2, Blue BG, Pad Med</p>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+      <div>
+        <h2>Heading</h2>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-wrapper pad-both-lrg">
+    <div class="container columns-3 gap-lrg">
+      <div>
+        <h2>Container</h2>
+        <p>Col 3, Padding Lrg, Gap Lrg</p>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+      <div>
+        <h2>Heading</h2>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+      <div>
+        <h2>Heading</h2>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-wrapper pad-both-lrg bg-light-grey">
+    <div class="container columns-3 first-column-100 gap-lrg">
+      <div>
+        <h2>Container</h2>
+        <p>Col 1st 100 - 3, Pad Lrg Bg Grey, Gap Lrg</p>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+      <div>
+        <h2>Heading</h2>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+      <div>
+        <h2>Heading</h2>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+      <div>
+        <h2>Heading</h2>
+        <p>Container content here - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et nulla nec risus viverra hendrerit. Phasellus sodales volutpat purus, vitae bibendum arcu congue sit amet. Proin vel metus pharetra, euismod nisl eu, pretium enim. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container-wrapper">
+    <div class="container column-xample">
+      <h2>All Columns</h2>
+      <p>Below are all the column options available & their desktop (aboe 114px viewport) widths as a reference.</p>
+      <p><br></p>
+
+      <h3>Columns</h3>
+      <p>Default column gap is 16px or spacing-1. Gap large is 32px or spcaing-2.</p>
+
+      <p><strong>2 Columns</strong></p>
+      <div class="columns-2">
+        <div>Column <br>Desktop 562px</p></div><div>Column <br>Desktop 562px</div>
+      </div>
+
+      <p><strong>3 Columns</strong></p>
+      <div class="columns-3">
+        <div>Column <br>Desktop 369px</div><div>Column <br>Desktop 369px</div><div>Column <br>Desktop 369px</div>
+      </div>
+
+      <p><strong>4 Columns</strong></p>
+      <div class="columns-4">
+        <div>Column <br>Desktop 273px</div><div>Column <br>Desktop 273px</div><div>Column <br>Desktop 273px</div><div>Column <br>Desktop 273px</div>
+      </div>
+
+      <p><strong>5 Columns</strong></p>
+      <div class="columns-5">
+        <div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div><div>Column <br>Desktop 215px</div>
+      </div>
+
+      <p><strong>6 Columns</strong></p>
+      <div class="columns-6">
+        <div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div><div>Column <br>Desktop 176px</div>
+      </div>
+
+      <p><strong>33/66 Columns</strong></p>
+      <div class="columns-33-66">
+        <div>Column <br>Desktop 374px</div><div>Column <br>Desktop 749px</div>
+      </div>
+
+      <p><strong>66/33 Columns</strong></p>
+      <div class="columns-66-33">
+        <div>Column <br>Desktop 749px</div><div>Column <br>Desktop 374px</div>
+      </div>
+
+  </div>
+  </div>
+  
+
+    
+</body>
+</html>

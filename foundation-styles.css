@@ -33,12 +33,12 @@
   --my-light-green: #87E882;
   --my-green: #38AA32;
 
-  --my-light-blue-shade: #04005C;
-  --my-light-blue-tint: #E5F8FF;
-  --my-orange-shade: #521000;
+  --my-light-blue-shade-900: #04005C;
+  --my-light-blue-tint-50: #E5F8FF;
+  --my-orange-shade-900: #521000;
   --my-light-orange-tint: #FFF2DB;
-  --my-green-shade: #004D1F;
-  --my-Light-green-tint: #EAFBE9;
+  --my-green-shade-900: #004D1F;
+  --my-Light-green-tint-50: #EAFBE9;
   --my-Red: #C70000;
 
   --my-neutral-50 : #F4F5FB; 
@@ -51,6 +51,10 @@
   --my-neutral-700: #424952;
   --my-neutral-800: #2E3339;
   --my-neutral-900: #191E24;
+
+  --my-bg-light-blue: var(--my-light-blue-tint-50);
+  --my-bg-light-grey: var(--my-neutral-50);
+  --my-bg-brand-blue: var(--my-mid-blue);
 
   --my-border: var(--my-neutral-100);
   --my-border-light: var(--my-neutral-50);
