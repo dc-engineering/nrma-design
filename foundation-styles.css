@@ -166,37 +166,37 @@ h1, h2, h3, h4, h5, h6
 
 h1
 {
-  font-size: 3rem; /*48px*/
+  font-size: 3rem !important; /*48px*/
   line-height: 1.15;
 }
 
 h2
 {
-  font-size: 2.5rem; /*40px*/
+  font-size: 2.5rem !important; /*40px*/
   line-height: 1.2;
 }
 
 h3
 {
-  font-size: 2rem; /*32*/
+  font-size: 2rem !important; /*32*/
   line-height: 1.25;
 }
 
 h4
 {
-  font-size: 1.5; /*24px*/
+  font-size: 1.5 !important; /*24px*/
   line-height: 1.35;
 }
 
 h5
 {
-  font-size: 1.25; /*20px*/
+  font-size: 1.25 !important; /*20px*/
   line-height: 1.4;
 }
 
 h6
 {
-  font-size: 1; /*16px*/
+  font-size: 1 !important; /*16px*/
   line-height: 1.4;
 }
 
