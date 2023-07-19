@@ -200,24 +200,63 @@ h6
   line-height: 1.4;
 }
 
+        @media screen and (max-width: 640px){
+          h1
+          {
+            font-size: 2rem !important; /*48px*/
+            line-height: 1.15;
+          }
+
+          h2
+          {
+            font-size: 1.75rem !important; /*48px*/
+            line-height: 1.15;
+          }
+
+          h3
+          {
+            font-size: 1.5rem !important; /*48px*/
+            line-height: 1.15;
+          }  
+          
+          h4
+          {
+            font-size: 1.25rem !important; /*48px*/
+            line-height: 1.15;
+          }
+
+          h5
+          {
+            font-size: 1cqb !important; /*48px*/
+            line-height: 1.15;
+          }
+
+          h6
+          {
+            font-size: 0.875rem !important; /*48px*/
+            line-height: 1.15;
+          }
+        }
+
+
 p
 {
-  font-size: 1.063rem; /*17px*/
+  font-size: 1.063rem  !important; /*17px*/
   line-height: 1.4;
 }
 
 p.large
 {
-  font-size: 1.125rem; /*18px*/
+  font-size: 1.125rem  !important; /*18px*/
   line-height: 1.5;
 }
 
 p.small
 {
-  font-size: 0.938rem; /*15px*/
+  font-size: 0.938rem  !important; /*15px*/
 }
 
 p.xsmall
 {
-  font-size: 0.813rem; /*13px*/
+  font-size: 0.813rem  !important; /*13px*/
 }
