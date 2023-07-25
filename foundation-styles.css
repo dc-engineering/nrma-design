@@ -56,6 +56,9 @@
   --my-bg-light-grey: var(--my-neutral-50);
   --my-bg-brand-blue: var(--my-mid-blue);
 
+  --my-heading-color: var(--my-neutral-900);
+  --my-body-color: var(--my-neutral-800);
+
   --my-border: var(--my-neutral-100);
   --my-border-light: var(--my-neutral-50);
 
@@ -155,6 +158,7 @@ html, body
   font-family: 'GT Eesti Text', sans-serif;
   margin-block-start: 0;
   margin-block-end: 0.66ch;
+  color: var(--my-body-color);
 }
 
 h1, h2, h3, h4, h5, h6
@@ -162,6 +166,7 @@ h1, h2, h3, h4, h5, h6
   font-family: 'GT Eesti Display', sans-serif;
   margin-block-start: 0;
   margin-block-end: 0.66ch;
+  color: var(--my-heading-color);
 }
 
 h1

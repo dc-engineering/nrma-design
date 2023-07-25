@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>My NRMA Website Layout Structure</title>
+</head>
+
+<style>
+
+@import url(foundation-styles.css);
+
+*
+{
+  box-sizing: border-box; 
+  margin: 0;
+}
+
+html, body
+{
+  font-family: 'GT Eesti Text', sans-serif;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content p
+{
+  margin-block-end: 1.6ch;
+}
+
+.header
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.header > div
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #C6C6D0;
+}
+
+.content-wrapper
+{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-block: var(--my-size-6);
+}
+
+.content
+{
+  width: min(1140px, calc(100% - var(--my-size-6)));
+}
+
+[class*="columns-"]
+{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--my-size-2);
+  margin-bottom: var(--my-size-3);
+}
+
+div[class*="columns-"] > div
+{
+  flex-basis: calc(25% - 1rem);
+  border: 1px solid #C6C6D0;
+  padding: var(--my-size-3);
+  background: white;
+  border-radius: var(--my-size-0-5);
+}
+
+.columns-2
+{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.columns-3
+{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.columns-4
+{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.columns-5
+{
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.columns-6
+{
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.columns-33-66
+{
+  grid-template-columns: 1fr 2fr;
+}
+
+.columns-66-33
+{
+  grid-template-columns: 2fr 1fr;
+}
+
+        /* Updated Breakpoint from 1024px = lg breakpoint */
+        @media screen and (max-width: 1140px){
+          .columns-4, .columns-5, .columns-6
+                  {
+                    grid-template-columns: repeat(3, 1fr);
+                  }
+        }
+
+                  /* Tailwind - 768 = md */
+                  @media screen and (max-width: 768px){ 
+                    .columns-2, .columns-3, .columns-4, .columns-5, .columns-5, .columns-33-66, .columns-66-33
+                    {
+                      grid-template-columns: repeat(2, 1fr);
+                    }
+                  }
+
+                          /* Tailwind breakpoint sm - 640 = sm */
+                          @media screen and (max-width: 640px){
+                            .columns-2, .columns-3, .columns-4, .columns-5, .columns-6, .columns-33-66, .columns-66-33
+                            {
+                              grid-template-columns: repeat(1, 1fr);
+                            }
+                          }
+
+.content-wrapper.example-bg
+{
+  background: #b0f0ff;
+  padding: var(--my-size-20) var(--my-size-10);
+}
+
+.footer
+{
+  background: var(--my-bg-light-blue);
+  padding: var(--my-size-20) var(--my-size-10);
+}
+
+.footer.curve-top-radius
+{
+  border-radius: 100% 100% 0 0 / 20%;
+  margin-top: -70px;
+}
+
+.footer.curve-top-pseudo
+{
+  --bg-color: var(--my-bg-light-blue);
+  background: var(--bg-color);
+  position: relative;
+}
+
+.footer.curve-top-pseudo::before
+{
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: var(--bg-color);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+@media screen and (max-width: 640px)
+{
+  .footer.curve-top-pseudo::before
+  {
+    clip-path: ellipse(75% 100% at 50% 100%);
+  }
+}
+
+
+.banner.curve-mask
+{
+  position: relative;
+  background: linear-gradient(90deg, white 50%, #eee 50%, #eee 100%);
+  min-height: 33vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.banner.curve-mask svg
+{
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: auto;
+}
+
+.banner.curve-mask .content
+{
+  padding-right: var(--my-size-16);
+}
+
+.banner-example > div
+{
+  width: 50%;
+}
+
+
+.titles
+{
+  width: min(90%, 800px);
+  margin-inline: auto;
+  padding-block: 8%;
+  text-align: center;
+}
+
+</style>
+
+<body>
+    
+  <div class="titles">
+    <h2>Curve Example - Simple radius</h2>
+    <p>Standard border-radius curve</p>
+  </div>
+
+
+  
+  <div class="content-wrapper example-bg">
+    <div class="content">
+      <h3>Sample content area above footer</h3>
+      <p>Background colour is to illustrate curve, the website content background is primarily white. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lorem risus, faucibus vitae cursus quis, ultricies vel neque.</p>
+
+    </div>
+  </div>
+
+  <div class="content-wrapper footer curve-top-radius">
+    <div class="content">
+      <h2>Footer Area</h2>
+      <p>Example footer area for the curve PoC.</p>
+    </div>
+  </div>
+
+  <div class="titles">
+    <h2>Curve Example - Pseudo element</h2>
+    <p>Standard border-radius curve</p>
+  </div>
+
+  
+  <div class="content-wrapper example-bg">
+    <div class="content">
+      <h3>Sample content area above footer</h3>
+      <p>Background colour is to illustrate curve, the website content background is primarily white. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lorem risus, faucibus vitae cursus quis, ultricies vel neque.</p>
+    </div>
+  </div>
+
+  <div class="content-wrapper footer curve-top-pseudo">
+    <div class="content">
+      <h2>Footer Area</h2>
+      <p>Example footer area for the curve PoC.</p>
+
+    </div>
+  </div>
+
+
+  <div class="titles">
+    <h2>Curve Example - SVG Mask</h2>
+    <p>Standard border-radius curve</p>
+  </div>
+
+
+  <div class="content-wrapper banner curve-mask">
+    <svg width="1001" height="42" viewBox="0 0 1001 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.573975 1.32561C0.573975 1.32561 515.377 64.6797 1000.57 1.32561C1000.57 45.6731 1000.57 41.1995 1000.57 41.1995H0.573975V1.32561Z" fill="white"/>
+      <path d="M0.573975 1.32561C0.573975 1.32561 515.377 64.6796 1000.57 1.32561" stroke="var(--my-border-light)"/>
+    </svg>
+      
+      <div class="content">
+        <div class="banner-example">
+          <div>
+            <h3>Sample banner</h3>
+            <p>Background colour is to illustrate curve, the website content background is primarily white. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lorem risus, faucibus vitae cursus quis, ultricies vel neque.</p>    
+          </div>
+          <div></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <h3>Sample content area below a page banner</h3>
+        <p>Background colour is to illustrate curve, the website content background is primarily white. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lorem risus, faucibus vitae cursus quis, ultricies vel neque.</p>
+      </div>
+    </div>
+    
+
+    
+</body>
+</html>
