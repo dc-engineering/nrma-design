@@ -195,6 +195,14 @@ div[class*="columns-"] > div
   height: auto;
 }
 
+.banner.curve-mask svg #line
+{
+  stroke: var(--my-border-light);
+  stroke-width: 2px;
+  vector-effect: non-scaling-stroke;
+}
+
+
 .banner.curve-mask .content
 {
   padding-right: var(--my-size-16);
@@ -271,7 +279,7 @@ div[class*="columns-"] > div
   <div class="content-wrapper banner curve-mask">
     <svg width="1001" height="42" viewBox="0 0 1001 42" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0.573975 1.32561C0.573975 1.32561 515.377 64.6797 1000.57 1.32561C1000.57 45.6731 1000.57 41.1995 1000.57 41.1995H0.573975V1.32561Z" fill="white"/>
-      <path d="M0.573975 1.32561C0.573975 1.32561 515.377 64.6796 1000.57 1.32561" stroke="var(--my-border-light)"/>
+      <path id="line" d="M0.573975 1.32561C0.573975 1.32561 515.377 64.6796 1000.57 1.32561"/>
     </svg>
       
       <div class="content">
